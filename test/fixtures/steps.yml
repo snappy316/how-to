@@ -2,9 +2,9 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  content: MyString
-  list: 
+  content: Open fridge
+  list: one
 
 two:
-  content: MyString
-  list: 
+  content: Check contents
+  list: one
