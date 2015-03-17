@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :lists do
-    resources :steps
+    resources :steps, shallow: true
   end
 
   root "lists#index"

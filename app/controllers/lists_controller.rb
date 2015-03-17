@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @steps = Step.where(list: @list.id)
   end
 
   # GET /lists/new

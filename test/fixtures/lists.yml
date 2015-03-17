@@ -1,3 +1,7 @@
 one:
   title: Grocery list
   description: Get these at the grocery store
+
+two:
+  title: Empty list
+  description: Nothing to see here

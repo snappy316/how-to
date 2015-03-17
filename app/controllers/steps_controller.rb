@@ -14,7 +14,8 @@ class StepsController < ApplicationController
 
   # GET /steps/new
   def new
-    @step = Step.new
+    @list = List.find(params[:list_id])
+    @step = @list.steps.build
   end
 
   # GET /steps/1/edit
@@ -24,16 +25,13 @@ class StepsController < ApplicationController
   # POST /steps
   # POST /steps.json
   def create
-    @step = Step.new(step_params)
+    @list = List.find(params[:list_id])
+    @step = @list.steps.build(step_params)
 
-    respond_to do |format|
-      if @step.save
-        format.html { redirect_to @step, notice: 'Step was successfully created.' }
-        format.json { render :show, status: :created, location: @step }
-      else
-        format.html { render :new }
-        format.json { render json: @step.errors, status: :unprocessable_entity }
-      end
+    if @step.save
+      redirect_to @list, notice: 'Step was successfully created.'
+    else
+      render :new
     end
   end
 

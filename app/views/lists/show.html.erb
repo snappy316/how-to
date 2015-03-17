@@ -10,5 +10,14 @@
   <%= @list.description %>
 </p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
+<p>
+  <strong>Steps:</strong>
+  <ul>
+    <% @steps.each do |step| %>
+      <li><%= step.content %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'New Step', new_list_step_path(@list)%>
+</p>
+
 <%= link_to 'Back', lists_path %>
