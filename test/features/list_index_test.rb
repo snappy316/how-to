@@ -7,7 +7,7 @@ feature "Viewing lists" do
   end
 
   scenario "one list page has multiple steps" do
-    visit list_path(:one)
+    visit list_path(lists(:one))
     page.text.must_include "Open fridge"
   end
 end
